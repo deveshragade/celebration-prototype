@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebration Clothing Store | Elegant Fashion for Special Occasions</title>
+    <meta name="description" content="Discover elegant outfits designed for weddings, festivals, and special occasions. Premium quality celebration wear.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'serif'],
+                        'body': ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        'champagne': '#F7E7CE',
+                        'burgundy': '#722F37',
+                        'charcoal': '#2C2C2C',
+                        'cream': '#FAF7F2',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in { opacity: 0; transform: translateY(20px); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .img-zoom { transition: transform 0.5s ease; overflow: hidden; }
+        .img-zoom:hover img { transform: scale(1.08); }
+        .card-lift { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .card-lift:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); }
+        .gallery-item { opacity: 0; transform: translateY(30px); }
+        .gallery-item.visible { opacity: 1; transform: translateY(0); }
+        .overlay-reveal { transition: opacity 0.4s ease; }
+        .gallery-item:hover .overlay-reveal { opacity: 1; }
+    </style>
+</head>
+<body class="font-body text-charcoal bg-cream antialiased">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cream/95 backdrop-blur-md border-b border-charcoal/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="#home" class="font-display text-2xl md:text-3xl font-semibold text-burgundy tracking-tight">Celebration</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-charcoal hover:text-burgundy transition-colors" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                <div id="nav-links" class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium text-charcoal/80 hover:text-burgundy transition-colors">Home</a>
+                    <a href="#collections" class="text-sm font-medium text-charcoal/80 hover:text-burgundy transition-colors">Collections</a>
+                    <a href="#gallery" class="text-sm font-medium text-charcoal/80 hover:text-burgundy transition-colors">Gallery</a>
+                    <a href="#about" class="text-sm font-medium text-charcoal/80 hover:text-burgundy transition-colors">About</a>
+                    <a href="#contact" class="text-sm font-medium text-charcoal/80 hover:text-burgundy transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-nav" class="hidden md:hidden bg-cream border-t border-charcoal/5 py-4 px-4">
+            <div class="flex flex-col gap-4">
+                <a href="#home" class="text-charcoal/80 hover:text-burgundy transition-colors">Home</a>
+                <a href="#collections" class="text-charcoal/80 hover:text-burgundy transition-colors">Collections</a>
+                <a href="#gallery" class="text-charcoal/80 hover:text-burgundy transition-colors">Gallery</a>
+                <a href="#about" class="text-charcoal/80 hover:text-burgundy transition-colors">About</a>
+                <a href="#contact" class="text-charcoal/80 hover:text-burgundy transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80" loading="eager" alt="Celebration fashion" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-charcoal/40"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-6 fade-in">
+                Celebrate Every Moment in Style
+            </h1>
+            <p class="font-body text-lg sm:text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto fade-in">
+                Discover elegant outfits designed for weddings, festivals, and special occasions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section id="collections" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal text-center mb-4 fade-in">Featured Collections</h2>
+            <p class="text-charcoal/70 text-center max-w-2xl mx-auto mb-12 md:mb-16 fade-in">Curated categories for every celebration</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="img-zoom rounded-lg overflow-hidden aspect-[3/4] relative fade-in">
+                    <img src="https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=600&q=80" loading="lazy" alt="Wedding Collection" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-charcoal/70 to-transparent">
+                        <h3 class="font-display text-xl text-white font-semibold">Wedding Collection</h3>
+                    </div>
+                </div>
+                <div class="img-zoom rounded-lg overflow-hidden aspect-[3/4] relative fade-in">
+                    <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&q=80" loading="lazy" alt="Festive Wear" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-charcoal/70 to-transparent">
+                        <h3 class="font-display text-xl text-white font-semibold">Festive Wear</h3>
+                    </div>
+                </div>
+                <div class="img-zoom rounded-lg overflow-hidden aspect-[3/4] relative fade-in">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80" loading="lazy" alt="Party Wear" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-charcoal/70 to-transparent">
+                        <h3 class="font-display text-xl text-white font-semibold">Party Wear</h3>
+                    </div>
+                </div>
+                <div class="img-zoom rounded-lg overflow-hidden aspect-[3/4] relative fade-in">
+                    <img src="https://images.unsplash.com/photo-1583391730658-9d91ddefe1a7?w=600&q=80" loading="lazy" alt="Traditional Ethnic Wear" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-charcoal/70 to-transparent">
+                        <h3 class="font-display text-xl text-white font-semibold">Traditional Ethnic Wear</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Fashion -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal text-center mb-4 fade-in">Trending Fashion</h2>
+            <p class="text-charcoal/70 text-center max-w-2xl mx-auto mb-12 md:mb-16 fade-in">Timeless pieces for memorable moments</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-lift bg-cream rounded-xl overflow-hidden fade-in">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600&q=80" loading="lazy" alt="Silk Saree Elegance" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-charcoal mb-2">Silk Saree Elegance</h3>
+                        <p class="text-charcoal/70 text-sm">Handwoven silk with intricate zari work, perfect for wedding ceremonies.</p>
+                    </div>
+                </div>
+                <div class="card-lift bg-cream rounded-xl overflow-hidden fade-in">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80" loading="lazy" alt="Lehenga Choli" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-charcoal mb-2">Lehenga Choli</h3>
+                        <p class="text-charcoal/70 text-sm">Regal designs with premium embroidery for festive celebrations.</p>
+                    </div>
+                </div>
+                <div class="card-lift bg-cream rounded-xl overflow-hidden fade-in sm:col-span-2 lg:col-span-1">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?w=600&q=80" loading="lazy" alt="Anarkali Suit" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-charcoal mb-2">Anarkali Suit</h3>
+                        <p class="text-charcoal/70 text-sm">Flowing silhouettes with contemporary prints and traditional charm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Store -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-burgundy/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal text-center mb-4 fade-in">Why Choose Our Store</h2>
+            <p class="text-charcoal/70 text-center max-w-2xl mx-auto mb-12 md:mb-16 fade-in">What sets us apart in celebration wear</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <div class="text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm fade-in">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-charcoal mb-2">Premium Quality Fabric</h3>
+                    <p class="text-charcoal/70 text-sm">Finest materials sourced for comfort and durability</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm fade-in">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-charcoal mb-2">Latest Fashion Trends</h3>
+                    <p class="text-charcoal/70 text-sm">Stay ahead with contemporary designs</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm fade-in">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-charcoal mb-2">Comfortable & Stylish Designs</h3>
+                    <p class="text-charcoal/70 text-sm">Elegance that doesn't compromise on comfort</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm fade-in">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-charcoal mb-2">Perfect for Celebrations</h3>
+                    <p class="text-charcoal/70 text-sm">Crafted for weddings, festivals & parties</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm fade-in">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-charcoal mb-2">Unique Designer Collections</h3>
+                    <p class="text-charcoal/70 text-sm">Exclusive designs you won't find elsewhere</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm fade-in">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-charcoal mb-2">High-Quality Craftsmanship</h3>
+                    <p class="text-charcoal/70 text-sm">Meticulous attention to every detail</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fashion Gallery -->
+    <section id="gallery" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal text-center mb-4 fade-in">Fashion Gallery</h2>
+            <p class="text-charcoal/70 text-center max-w-2xl mx-auto mb-12 md:mb-16 fade-in">A glimpse into our celebration wear collection</p>
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div class="gallery-item break-inside-avoid relative overflow-hidden rounded-lg group">
+                    <img src="https://images.unsplash.com/photo-1603252109301-4ad9f2e738c2?w=500&q=80" loading="lazy" alt="Gallery 1" class="w-full h-auto object-cover">
+                    <div class="overlay-reveal absolute inset-0 bg-burgundy/20 opacity-0 flex items-center justify-center">
+                        <span class="font-display text-white text-lg font-medium">Elegant Saree</span>
+                    </div>
+                </div>
+                <div class="gallery-item break-inside-avoid relative overflow-hidden rounded-lg group">
+                    <img src="https://images.unsplash.com/photo-1583391730658-9d91ddefe1a7?w=500&q=80" loading="lazy" alt="Gallery 2" class="w-full h-auto object-cover">
+                    <div class="overlay-reveal absolute inset-0 bg-burgundy/20 opacity-0 flex items-center justify-center">
+                        <span class="font-display text-white text-lg font-medium">Traditional Wear</span>
+                    </div>
+                </div>
+                <div class="gallery-item break-inside-avoid relative overflow-hidden rounded-lg group">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&q=80" loading="lazy" alt="Gallery 3" class="w-full h-auto object-cover">
+                    <div class="overlay-reveal absolute inset-0 bg-burgundy/20 opacity-0 flex items-center justify-center">
+                        <span class="font-display text-white text-lg font-medium">Festive Lehenga</span>
+                    </div>
+                </div>
+                <div class="gallery-item break-inside-avoid relative overflow-hidden rounded-lg group">
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&q=80" loading="lazy" alt="Gallery 4" class="w-full h-auto object-cover">
+                    <div class="overlay-reveal absolute inset-0 bg-burgundy/20 opacity-0 flex items-center justify-center">
+                        <span class="font-display text-white text-lg font-medium">Silk Collection</span>
+                    </div>
+                </div>
+                <div class="gallery-item break-inside-avoid relative overflow-hidden rounded-lg group">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500&q=80" loading="lazy" alt="Gallery 5" class="w-full h-auto object-cover">
+                    <div class="overlay-reveal absolute inset-0 bg-burgundy/20 opacity-0 flex items-center justify-center">
+                        <span class="font-display text-white text-lg font-medium">Party Ensemble</span>
+                    </div>
+                </div>
+                <div class="gallery-item break-inside-avoid relative overflow-hidden rounded-lg group">
+                    <img src="https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?w=500&q=80" loading="lazy" alt="Gallery 6" class="w-full h-auto object-cover">
+                    <div class="overlay-reveal absolute inset-0 bg-burgundy/20 opacity-0 flex items-center justify-center">
+                        <span class="font-display text-white text-lg font-medium">Anarkali Style</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Brand -->
+    <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-burgundy text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold mb-6 fade-in">About the Brand</h2>
+            <p class="text-lg md:text-xl text-white/90 font-light leading-relaxed fade-in">
+                Celebration Clothing Store is dedicated to bringing elegance and style to every celebration. Our collections are designed to make every moment special, whether it's weddings, festivals, or parties. We believe that what you wear should reflect the joy of the occasion.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal text-center mb-4 fade-in">Contact Us</h2>
+            <p class="text-charcoal/70 text-center mb-12 md:mb-16 fade-in">We'd love to hear from you</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-charcoal/60">Phone</p>
+                        <a href="tel:+919876543210" class="font-medium text-charcoal hover:text-burgundy transition-colors">+91 9876543210</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-burgundy/10 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-charcoal/60">Email</p>
+                        <a href="mailto:celebrationstore@email.com" class="font-medium text-charcoal hover:text-burgundy transition-colors">celebrationstore@email.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center gap-6 mt-12">
+                <a href="https://instagram.com/celebration_clothing" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-charcoal/5 flex items-center justify-center text-charcoal hover:bg-burgundy hover:text-white transition-all" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://youtube.com/@celebration_clothing" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-charcoal/5 flex items-center justify-center text-charcoal hover:bg-burgundy hover:text-white transition-all" aria-label="YouTube">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="font-display text-2xl font-semibold text-champagne">Celebration Clothing Store</div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                    <a href="#home" class="text-white/80 hover:text-champagne transition-colors text-sm">Home</a>
+                    <a href="#collections" class="text-white/80 hover:text-champagne transition-colors text-sm">Collections</a>
+                    <a href="#gallery" class="text-white/80 hover:text-champagne transition-colors text-sm">Gallery</a>
+                    <a href="#about" class="text-white/80 hover:text-champagne transition-colors text-sm">About</a>
+                    <a href="#contact" class="text-white/80 hover:text-champagne transition-colors text-sm">Contact</a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://instagram.com/celebration_clothing" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-champagne transition-colors" aria-label="Instagram">@celebration_clothing</a>
+                    <a href="https://youtube.com/@celebration_clothing" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-champagne transition-colors" aria-label="YouTube">@celebration_clothing</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 text-center text-white/60 text-sm">
+                &copy; 2025 Celebration Clothing Store. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
